@@ -1,0 +1,89 @@
+---
+title: "Take Home 1"
+author: "FNU Anirudh"
+date: "October 5, 2015"
+output: html_document
+---
+
+
+ 
+
+1.a) 
+
+Given that there are 157 girls out of 329 children
+
+Percentage of Child being girl = 48.5%
+
+Probability(Child being girl)= 0.485
+
+P(X >=157)= 1-P(X < 157)
+
+p= 1- pbinom(156,329,0.485)
+```{r,eval=TRUE}
+p= 1- pbinom(156,329,0.485)
+p
+
+```
+
+          
+          
+          
+b) As mentioned in the problem probability of giving birth to a girl may depend on factors characterstics of parents like physical beauty hence we can say that probability depends on genes of parents and may also depend on external factors like climate and enviornment (more or less polluted) hence we can conclude that sexes of children in study might not be independent.
+
+
+
+2. Since there are only two choices for answers i.e. True or False
+We can say that Correct answer is either true or false
+
+Hence Probability of correct answer, P(Correct)= 0.5
+
+Probability of atleast 8 correct answer is 
+P(X >= 8)= 1- P(X < 7)
+         = 1- pbinom(7,10,0.5)
+         = 0.054
+         
+Now we need to find that at least one chimpanzee gets 8 or more questions correct.
+P(M >= 1)=1- P(M < 1)
+        
+```{r,eval=TRUE}
+m= 1- pbinom(0,10,0.054)
+m
+```
+
+
+3. 
+a) Let Median of Y be q2
+
+P(Y< = q2)=0.5
+P(|X|<= q2)=0.5
+P(-q2<=X<=q2)=0.5
+
+Since X is standard normal vairable so it is symmetric hence we can say that
+
+```{r,eval=TRUE}
+qnorm(0.75)
+
+```
+
+b) P(1 <Y< 2) = F2- F1
+
+Where F2= pnorm(2)- pnorm(-2)
+and   F1= pnorm(1)- pnorm(-1)
+
+```{r,eval=TRUE}
+f2= pnorm(2)- pnorm(-2)
+f1= pnorm(1)- pnorm(-1)
+f2-f1
+
+```
+
+c) 0.95 quantile of Y is
+
+```{r,eval=TRUE}
+x=rnorm(10000)
+y=abs(x)
+quantile(y,0.95)
+
+```
+
+
